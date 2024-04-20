@@ -1,0 +1,21 @@
+# Template file for 'pipes-rs'
+pkgname=pipes-rs
+version=1.6.3
+revision=1
+build_style=cargo
+make_install_args="--path crates/pipes-rs"
+short_desc="Over-engineered rewrite of pipes.sh"
+maintainer="Cornelius-Figgle <max@fullimage.net>"
+license="BlueOak-1.0.0"
+homepage="https://github.com/lhvy/pipes-rs"
+distfiles="https://github.com/lhvy/pipes-rs/archive/refs/tags/v${version}.tar.gz"
+checksum=ac7452f5b29e83bea6da14d37cf37efcf0a7c90846001cab55c4c1aea500d6cb
+
+if [ "$XBPS_TARGET_NO_ATOMIC8" ]; then
+	XBPS_CROSS_RUSTFLAGS+=" -latomic"
+fi
+
+post_install() {
+	vlicense LICENSE.md
+}
+
