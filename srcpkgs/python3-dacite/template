@@ -1,0 +1,17 @@
+# Template file for 'python3-dacite'
+pkgname=python3-dacite
+version=1.8.1
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel python3-pip"
+checkdepends="python3-pytest python3-pytest-benchmark"
+short_desc="Simple creation of data classes from dictionaries"
+maintainer="Cornelius-Figgle <max@fullimage.net>"
+license="MIT"
+homepage="https://pypi.org/project/dacite/"
+distfiles="https://github.com/konradhalas/dacite/archive/refs/tags/v${version}.tar.gz"
+checksum=791ac3da85a040684a96df59e2320dc7b3cac000ff536e3f4b00fb3b67520b86
+
+post_install() {
+	vlicense LICENSE
+}
