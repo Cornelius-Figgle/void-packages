@@ -1,0 +1,19 @@
+# Template file for 'python3-jaconv'
+pkgname=python3-jaconv
+version=0.3.4
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel python3-pip"
+short_desc="Pure-Python Japanese character interconverter"
+maintainer="Cornelius-Figgle <max@fullimage.net>"
+license="MIT"
+homepage="https://pypi.org/project/jaconv/"
+distfiles="${PYPI_SITE}/j/jaconv/jaconv-${version}.tar.gz"
+checksum=9e7c55f3f0b0e2dbad62f6c9fa0c30fc6fffdbb78297955509d90856b3a31d6d
+
+# This package uses python3-nose for tests, which requires the imp python module, which is deprecated and should be replaced by importlib
+make_check="no"
+
+post_install() {
+	vlicense LICENSE
+}
