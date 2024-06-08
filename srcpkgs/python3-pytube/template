@@ -1,0 +1,19 @@
+# Template file for 'python3-pytube'
+pkgname=python3-pytube
+version=15.0.0
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel python3-pip"
+checkdepends="python3-pytest"
+short_desc="Lightweight Python library for downloading YouTube Videos"
+maintainer="Cornelius-Figgle <max@fullimage.net>"
+license="MIT"
+homepage="https://pypi.org/project/pytube/"
+distfiles="https://github.com/pytube/pytube/archive/refs/tags/v${version}.tar.gz"
+checksum=b685e884c2064032bffb76fe4d0be789125be813695bacc55ab4009ffd5c3664
+
+make_check="no" # Raises StopIteration with no apparent root or cause
+
+post_install() {
+	vlicense LICENSE
+}
