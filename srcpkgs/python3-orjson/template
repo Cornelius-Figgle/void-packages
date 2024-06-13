@@ -1,0 +1,18 @@
+# Template file for 'python3-orjson'
+pkgname=python3-orjson
+version=3.10.5
+revision=1
+build_style="python3-pep517"
+hostmakedepends="cargo maturin python3-poetry-core python3-setuptools
+	python3-wheel"
+checkdepends="python3-pytest"
+short_desc="Fast, correct Python JSON library"
+maintainer="Cornelius-Figgle <max@fullimage.net>"
+license="Apache-2.0 OR MIT"
+homepage="https://github.com/ijl/orjson/"
+distfiles="https://github.com/ijl/orjson/archive/refs/tags/${version}.tar.gz"
+checksum=16027ad30f20dd825716803b260db75b822dbc9fcb1b0900b9fae3cc05b9034f
+
+post_install() {
+	vlicense LICENSE-MIT
+}
