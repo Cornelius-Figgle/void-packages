@@ -1,0 +1,14 @@
+# Template file for 'python3-multipart'
+pkgname=python3-multipart
+version=0.0.9
+revision=1
+build_style="python3-pep517"
+hostmakedepends="hatchling python3-poetry-core python3-setuptools python3-wheel"
+depends="python3-yaml"
+checkdepends="python3-pytest $depends"
+short_desc="Streaming multipart parser for Python"
+maintainer="Cornelius-Figgle <max@fullimage.net>"
+license="Apache-2.0"
+homepage="https://github.com/Kludex/python-multipart/"
+distfiles="https://github.com/Kludex/python-multipart/archive/refs/tags/${version}.tar.gz"
+checksum=71c887316d8a26f34e56f08ab7ef557ca4d7c04871a2aabb37dbe2854461955f
