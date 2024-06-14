@@ -1,0 +1,26 @@
+# Template file for 'python3-fastapi'
+pkgname=python3-fastapi
+version=0.111.0
+revision=1
+build_style="python3-pep517"
+hostmakedepends="python3-pdm-backend python3-poetry-core python3-setuptools
+	python3-wheel"
+depends="python3-anyio python3-dirty-equals python3-email-validator
+	python3-Flask python3-httpx python3-multipart python3-orjson
+	python3-pydantic python3-starlette python3-SQLAlchemy python3-trio"
+checkdepends="python3-pytest $depends"
+short_desc="Modern, fast, web framework for building APIs with Python"
+maintainer="Cornelius-Figgle <max@fullimage.net>"
+license="MIT"
+homepage="https://fastapi.tiangolo.com/"
+distfiles="https://github.com/tiangolo/fastapi/archive/refs/tags/${version}.tar.gz"
+checksum=46504f0b971f0342036d46c8cde69fb0369e5c687aecdc1a10cd5445ccfe218f
+
+# current release (0.111.0) uses python-jose, which is deprecated
+# master uses PyJWT instead, so checks can be re-enabled with next version
+# furthermore, FastAPI's repository doesn't let users raise issues
+make_check="no"
+
+post_install() {
+	vlicense LICENSE
+}
